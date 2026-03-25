@@ -5,7 +5,7 @@ export function App() {
   return (
     <>
       <div>
-        <h1 class="text-5xl">サンプル</h1>
+        <h1 class="text-5xl font-extrabold tracking-tight">サンプル</h1>
       </div>
     </>
   );
