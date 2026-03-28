@@ -11,9 +11,9 @@ import "../styles/global.css";
     <title>3分割レイアウト - Menu</title>
   </head>
   <body class="">
-    <div class="">
+    <div class="flex flex-row">
       <!-- 左側：メニュー -->
-      <aside class="bg-gray-100 border-r border-gray-300 overflow-y-auto">
+      <aside class="bg-gray-100 border-r border-gray-300 overflow-y-auto flex-none">
         <div class="p-4">
           <h2 class="text-xl font-bold mb-4 text-gray-800">メニュー</h2>
           <nav>
@@ -29,7 +29,7 @@ import "../styles/global.css";
       </aside>
 
       <!-- 真ん中：メインコンテンツ -->
-      <main class="bg-white overflow-y-auto">
+      <main class="bg-white overflow-y-auto flex-1">
         <div class="p-8 max-w-4xl mx-auto">
           <h1 class="text-3xl font-bold mb-6 text-gray-900">メインコンテンツ</h1>
           
@@ -76,7 +76,7 @@ import "../styles/global.css";
       </main>
 
       <!-- 右側：目次 -->
-      <aside class="bg-gray-50 border-l border-gray-300 overflow-y-auto">
+      <aside class="bg-gray-50 border-l border-gray-300 overflow-y-auto flex-none">
         <div class="p-4">
           <h2 class="text-xl font-bold mb-4 text-gray-800">目次</h2>
           <nav>
