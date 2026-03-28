@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+        <main class="p-6">
+            <h1 class="text-lg font-semibold">Movies</h1>
+
+            <article class="gap-2">
+                <div class="space-y-3">
+                    <img src="https://picsum.photos/id/1/1920/1080" class="rounded-lg" />
+                    <div class="gap-2">
+                        <div class="rounded-full bg-gray-500 w-10 h-10"></div>
+                        <div>
+                            <h2 class="text-sm">Movie Title</h2>
+                            <p class="text-xs">説明です</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </body>
+</html>
