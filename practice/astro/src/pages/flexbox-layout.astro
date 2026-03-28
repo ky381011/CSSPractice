@@ -1,0 +1,94 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>3分割レイアウト - Menu</title>
+  </head>
+  <body class="">
+    <div class="">
+      <!-- 左側：メニュー -->
+      <aside class="bg-gray-100 border-r border-gray-300 overflow-y-auto">
+        <div class="p-4">
+          <h2 class="text-xl font-bold mb-4 text-gray-800">メニュー</h2>
+          <nav>
+            <ul class="space-y-2">
+              <li><a href="#" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-700">ホーム</a></li>
+              <li><a href="#" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-700">プロフィール</a></li>
+              <li><a href="#" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-700">設定</a></li>
+              <li><a href="#" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-700">ヘルプ</a></li>
+              <li><a href="#" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-700">お問い合わせ</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 真ん中：メインコンテンツ -->
+      <main class="bg-white overflow-y-auto">
+        <div class="p-8 max-w-4xl mx-auto">
+          <h1 class="text-3xl font-bold mb-6 text-gray-900">メインコンテンツ</h1>
+          
+          <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">セクション1</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              ここにメインコンテンツの内容が入ります。このセクションには主要な情報や記事の本文などが表示されます。
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Flexboxを使用して、画面を3分割したレイアウトになっています。左側にメニュー、中央にメインコンテンツ、右側に目次が配置されています。
+            </p>
+          </section>
+
+          <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">セクション2</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              このレイアウトは、Tailwind CSSのFlexboxユーティリティクラスを使用して実装されています。
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              中央のメインコンテンツエリアは `flex-1` クラスを使用して、残りのスペースを自動的に埋めるように設定されています。
+            </p>
+          </section>
+
+          <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">セクション3</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              各セクションには適切なマージンとパディングが設定されており、読みやすいレイアウトになっています。
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              右側の目次エリアでは、このページの各セクションへのナビゲーションリンクが表示されます。
+            </p>
+          </section>
+
+          <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">セクション4</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              このレイアウトは、レスポンシブデザインにも対応できるように設計されています。
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              必要に応じて、メディアクエリを使用してモバイルデバイスでの表示を最適化することもできます。
+            </p>
+          </section>
+        </div>
+      </main>
+
+      <!-- 右側：目次 -->
+      <aside class="bg-gray-50 border-l border-gray-300 overflow-y-auto">
+        <div class="p-4">
+          <h2 class="text-xl font-bold mb-4 text-gray-800">目次</h2>
+          <nav>
+            <ul class="space-y-2">
+              <li><a href="#section1" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-700 text-sm">セクション1</a></li>
+              <li><a href="#section2" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-700 text-sm">セクション2</a></li>
+              <li><a href="#section3" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-700 text-sm">セクション3</a></li>
+              <li><a href="#section4" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-700 text-sm">セクション4</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>
