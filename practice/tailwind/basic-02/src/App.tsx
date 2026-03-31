@@ -11,6 +11,7 @@ function App() {
           <h1 className="text-7xl font-bold">TailwindCSS入門</h1>
         </div>
         <button className="easy-button">ボタン</button>
+        <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-10">ボタン</button> 
       </div>
     </>
   )
