@@ -1,0 +1,12 @@
+.easy-button {
+  padding: 8px 16px;
+  background-color: #467ef7;
+  color: white;
+  border-radius: 4px;
+  font: bold;
+  margin-left: 40px;
+}
+
+.easy-button:hover{
+  background-color: #386ad6;
+}
