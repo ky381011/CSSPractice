@@ -51,7 +51,10 @@ export default defineConfig({
 ```
 #### 初期化
 1. 各svgを削除(任意)
-1. `App.css`を削除
+1. `App.css`を以下に更新
+```css
+@reference "./index.css";
+```
 1. `App.jsx`を以下に更新
 ```jsx
 import './App.css'
