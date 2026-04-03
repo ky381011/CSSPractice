@@ -3,7 +3,9 @@ import './App.css'
 function App() {
   return (
     <>
-      <div></div>
+      <div className='font-poppins'>
+        <h1 >Hello World!!</h1>
+      </div>
     </>
   )
 }
