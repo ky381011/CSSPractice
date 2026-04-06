@@ -9,11 +9,11 @@ function App() {
         <div className='py-6'> 
           <div>
             <div>SAMPLE.com</div>
-            <div>
+            <div className='container mx-auto'>
               <a href="#home">ホーム</a>
-              <a href="#home">ポートフォリオ</a>
-              <a href="#home">お客様</a>
-              <a href="#home"><button>お問い合わせ</button></a>
+              <a href="#portfolio">ポートフォリオ</a>
+              <a href="#clients">お客様</a>
+              <a href="#contact"><button>お問い合わせ</button></a>
             </div>
           </div>
         </div>
