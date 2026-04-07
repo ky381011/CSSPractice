@@ -9,7 +9,7 @@ function App() {
         <div className='py-6'> 
           <div>
             <div>SAMPLE.com</div>
-            <div className='container mx-auto'>
+            <div className='container mx-auto flex justify-between items-center px-8 md:px-14 lg:px-24 w-full'>
               <a href="#home">ホーム</a>
               <a href="#portfolio">ポートフォリオ</a>
               <a href="#clients">お客様</a>
