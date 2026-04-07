@@ -9,4 +9,5 @@
 @theme {
   --font-poppins: "Poppins", sans-serif;
   --color-body: #050505;
+  --color-selected-text: #a3a3ff;
 }
