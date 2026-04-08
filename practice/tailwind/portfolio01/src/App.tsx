@@ -25,7 +25,7 @@ function App() {
               <a
                 href="#contact"
                 className='hover:text-selected-text transition-all duration-300'
-              ><button>お問い合わせ</button></a>
+              ><button className='px-6 py-2 bg-theme font-bold rounded-lg hover:bg-purple-600 transition-all duration-300'>お問い合わせ</button></a>
             </div>
           </div>
         </div>
