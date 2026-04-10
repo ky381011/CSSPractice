@@ -6,7 +6,7 @@ function App() {
       <div className='min-h-screen font-poppins bg-body text-white'>
         {/* ナビゲーションバー */}
         {/* ヘッダー部分 */}
-        <div className='py-6'> 
+        <div className='py-6 relative z-10'> 
           <div className='container mx-auto flex justify-between items-center px-8 md:px-14 lg:px-24 w-full'>
             <div className='text-lg font-bold'>SAMPLE.com</div>
             <div className='space-x-12 hidden md:flex items-center'>
@@ -34,7 +34,7 @@ function App() {
         </div>
         {/* ヒーローセクション */}
         <div id="home" className='container mt-16 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full'>
-          <div className='flex flex-wrap md:flex-nowrap'>
+          <div className='flex flex-wrap md:flex-nowrap justify-center md:justify-start max-w-xl'>
             <div className='md:my-36 lg:ml-20 relative z-10'>
               <h1 className='font-bold text-5xl text-center md:text-left lg:text-7xl md:text-6xl'>
                 TailwindCSSで <br />
