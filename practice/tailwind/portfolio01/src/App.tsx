@@ -45,7 +45,7 @@ function App() {
                 <span><i className="fa-solid fa-rocket mr-1"></i>もっと見る</span>
               </button>
             </div>
-            <img src="/images/human.jpg" alt="image" className='md:absolute lg:top-2 lg:right-52 md:w-3/5 w-10/12 mt-12 md:mt-0 right-6 mx-auto z-0'></img>
+            <img src="/images/human.jpg" alt="image" className='md:absolute lg:top-2 lg:right-52 md:w-2/5 w-10/12 mt-12 md:mt-0 right-6 mx-auto z-0'></img>
           </div>
         </div>
         {/* ポートフォリオセクション */}
