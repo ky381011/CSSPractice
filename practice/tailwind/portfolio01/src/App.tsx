@@ -57,22 +57,12 @@ function App() {
             <p className='section-paragraph'>
               私が作ってきたWebアプリケーションがこちら
             </p>
-            <div className='grid'>
+            <div className='grid lg:grid-color-4 md:grid-cols-2 grid-cols-1 gap-6'>
               <img src='./images/portfolio1.jpg' alt='' className='w-full h-36 lg:h-72 object-cover rounded-md'></img>
-            </div>
-            <div className='grid'>
               <img src='./images/portfolio2.jpg' alt='' className='w-full h-36 lg:h-72 object-cover rounded-md'></img>
-            </div>
-            <div className='grid'>
               <img src='./images/portfolio3.jpg' alt='' className='w-full h-36 lg:h-72 object-cover rounded-md'></img>
-            </div>
-            <div className='grid'>
               <img src='./images/portfolio4.jpg' alt='' className='w-full h-36 lg:h-72 object-cover rounded-md'></img>
-            </div>
-            <div className='grid'>
               <img src='./images/portfolio5.jpg' alt='' className='w-full h-36 lg:h-72 object-cover rounded-md'></img>
-            </div>
-            <div className='grid'>
               <img src='./images/portfolio6.jpg' alt='' className='w-full h-36 lg:h-72 object-cover rounded-md'></img>
             </div>
           </section>
