@@ -35,7 +35,7 @@ function App() {
         {/* ヒーローセクション */}
         <div id="home" className='container mt-16 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full'>
           <div className='flex flex-wrap md:flex-nowrap justify-center md:justify-start max-w-xl'>
-            <div className='md:my-36 lg:ml-20 relative z-10'>
+            <div className='md:my-36 lg:ml-20 relative z-10 md:justify-center flex flex-wrap'>
               <h1 className='font-bold text-5xl text-center md:text-left lg:text-7xl md:text-6xl'>
                 TailwindCSSで <br />
                 美しいサイトを <br />
@@ -49,7 +49,7 @@ function App() {
           </div>
         </div>
         {/* ポートフォリオセクション */}
-        <div id="portfolio" className='container mt-64 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full'>
+        <div id="portfolio" className='container mt-64 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full z-10'>
           <section className='w-full'>
             <h2 className='secondary-title'>
               私のポートフォリオ
