@@ -48,6 +48,17 @@ function App() {
             <img src="/images/human.jpg" alt="image" className='md:absolute lg:top-2 lg:right-52 md:w-3/5 w-10/12 mt-12 md:mt-0 right-6 mx-auto z-0'></img>
           </div>
         </div>
+        {/* ポートフォリオセクション */}
+        <div id="portfolio" className='container mt-64 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full'>
+          <section className='w-full'>
+            <h2 className='secondary-title'>
+              私のポートフォリオ
+            </h2>
+            <p className='section-paragraph'>
+              私が作ってきたWebアプリケーションがこちら
+            </p>
+          </section>
+        </div>
       </div>
     </>
   )
