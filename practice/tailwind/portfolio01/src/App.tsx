@@ -19,9 +19,9 @@ function App() {
                 className='hover:text-selected-text transition-all duration-300'
               >ポートフォリオ</a>
               <a
-                href="#clients"
+                href="#skills"
                 className='hover:text-selected-text transition-all duration-300'
-              >お客様</a>
+              >スキル一覧</a>
               <a
                 href="#contact"
                 className='hover:text-selected-text transition-all duration-300'
@@ -64,6 +64,22 @@ function App() {
               <img src='./images/portfolio4.jpg' alt='' className='w-full h-36 lg:h-72 object-cover rounded-md'></img>
               <img src='./images/portfolio5.jpg' alt='' className='w-full h-36 lg:h-72 object-cover rounded-md'></img>
               <img src='./images/portfolio6.jpg' alt='' className='w-full h-36 lg:h-72 object-cover rounded-md'></img>
+            </div>
+          </section>
+        </div>
+        {/* スキルスタック */}
+        <div id="portfolio" className='container mt-64 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full z-10'>
+          <section className='w-full'>
+            <h2 className='secondary-title'>
+              スキルスタック
+            </h2>
+            <p className='section-paragraph'>
+              私は以下のプログラミングをx年以上取り扱ってきました。
+            </p>
+            <div className='my-16'>
+              <div className='w-full border border-purple-300'>
+                {/* 言語のロゴ */}
+              </div>
             </div>
           </section>
         </div>
