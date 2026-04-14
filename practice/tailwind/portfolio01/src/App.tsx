@@ -77,16 +77,18 @@ function App() {
               私は以下のプログラミングをx年以上取り扱ってきました。
             </p>
             <div className='my-16'>
-              <div className='w-full border border-purple-300'>
+              <div className='w-full border border-purple-300 p-16 lg:px-32 lg:py-20 flex justify-center lg:justify-start flex-wrap space-x-32'>
                 {/* 言語のロゴ */}
                 <div>
                   <i className="fa-brands fa-square-js text-7xl text-yellow-300"></i>
                 </div>
                 {/* スキルの説明 */}
                 <div>
-                  <h3>Javascript</h3>
-                  <div>ウェブサイト制作</div>
-                  <div>フロントエンド開発</div>
+                  <h3 className='text-3xl font-semibold'>Javascript</h3>
+                  <div>
+                    <div>ウェブサイト制作</div>
+                    <div>フロントエンド開発</div>
+                  </div>
                   <p>Javascriptエンジニア。普段はReactを使って...</p>
                 </div>
               </div>
