@@ -79,6 +79,16 @@ function App() {
             <div className='my-16'>
               <div className='w-full border border-purple-300'>
                 {/* 言語のロゴ */}
+                <div>
+                  <i className="fa-brands fa-square-js text-7xl text-yellow-300"></i>
+                </div>
+                {/* スキルの説明 */}
+                <div>
+                  <h3>Javascript</h3>
+                  <div>ウェブサイト制作</div>
+                  <div>フロントエンド開発</div>
+                  <p>Javascriptエンジニア。普段はReactを使って...</p>
+                </div>
               </div>
             </div>
           </section>
