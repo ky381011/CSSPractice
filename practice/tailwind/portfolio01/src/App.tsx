@@ -129,6 +129,23 @@ function App() {
             </div>
           </section>
         </div>
+
+        {/* お問い合わせ */}
+        <div id="contact" className='container mt-64 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full z-10'>
+          <section className='w-full'>
+            <h2 className='secondary-title'>
+              お問い合わせ
+            </h2>
+            <p className='section-paragraph'>
+              私のサンプル連絡先です。
+            </p>
+            <div className='w-full grid lg:grid-cols-2 gap-8 lg:gap-32 mt-16'>
+              <div>
+                
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
     </>
   )
