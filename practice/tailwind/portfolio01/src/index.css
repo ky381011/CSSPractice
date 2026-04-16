@@ -17,6 +17,10 @@
   --color-input: #2a2a33;
 }
 
+body {
+  background-color: var(--color-body);
+}
+
 .secondary-title {
   @apply text-3xl font-bold
 }
