@@ -141,7 +141,8 @@ function App() {
             </p>
             <div className='w-full grid lg:grid-cols-2 gap-8 lg:gap-32 mt-16'>
               <div>
-                
+                <label className='text-white block mb-6 text-xl font-bold'>お名前</label>
+                <input type="text" className='w-full border border-inputBorder bg-input px-4 py-4'></input>
               </div>
             </div>
           </section>
