@@ -155,6 +155,23 @@ function App() {
                 </div>
                 <button className='px-8 py-3 bg-theme font-bold rounded-lg hover:bg-purple-600 transition-all duration-300'>送信する</button>
               </div>
+              <div>
+                <p className='text-secondary'>000-1111-2222</p>
+                <a href='mailto:sample.portfoilo@gmail.com'>sample.portfolio@gmail.com</a>
+                {/* SNS */}
+                <div className='mt-20 space-x-6'>
+                  <a href='#'>
+                    <i className='fa-brands fa-twitter text-3xl text-blue-400'></i>
+                  </a>
+                  <a href='#'>
+                    <i className='fa-brands fa-facebook text-3xl text-blue-600'></i>
+                  </a>
+                  <a href='#'>
+                    <i className='fa-brands fa-instagram text-3xl text-pink-400'></i>
+                  </a>
+                </div>
+                
+              </div>
             </div>
           </section>
         </div>
