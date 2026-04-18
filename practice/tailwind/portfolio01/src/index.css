@@ -17,6 +17,12 @@
   --color-input: #2a2a33;
 }
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   background-color: var(--color-body);
 }

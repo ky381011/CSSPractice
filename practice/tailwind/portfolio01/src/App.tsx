@@ -68,7 +68,7 @@ function App() {
           </section>
         </div>
         {/* スキルスタック */}
-        <div id="portfolio" className='container mt-64 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full z-10'>
+        <div id="skills" className='container mt-64 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full z-10'>
           <section className='w-full'>
             <h2 className='secondary-title'>
               スキルスタック
