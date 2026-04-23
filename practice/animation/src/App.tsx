@@ -1,10 +1,11 @@
 import './App.css'
+import { PreviewFrame } from './components/PreviewFrame'
 
 function App() {
   return (
     <>
-      <div>
-        <p>Hello, World!!</p>
+      <div className="w-screen h-screen bg-sky-100">
+        <PreviewFrame />
       </div>
     </>
   )
