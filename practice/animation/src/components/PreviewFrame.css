@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.widget {
+  @apply mx-10 my-6 rounded-4xl bg-white shadow-md border border-black/6 min-w-0 min-h-0;
+}
