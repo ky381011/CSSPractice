@@ -13,8 +13,8 @@ export function PreviewFrame({ setIndex }: PreviewFrameProps){
   const animations = animationSets[setIndex]()
 
   return (
-    <>
-      <div className="w-full h-full grid grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2 overflow-hidden">
+    <div className="preview-wrapper">
+      <div className="preview-grid">
         {animations.map((anim) => (
           <div key={anim.name} className="widget">
             <div className="widget-content">
@@ -24,6 +24,6 @@ export function PreviewFrame({ setIndex }: PreviewFrameProps){
           </div>
         ))}
       </div>
-    </>
+    </div>
   )
 }

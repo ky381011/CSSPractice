@@ -1,5 +1,31 @@
 @import "tailwindcss";
 
+/* フレーム全体をコンテナとして登録 */
+.preview-wrapper {
+  width: 100%;
+  height: 100%;
+  container-type: size;
+  container-name: frame;
+}
+
+/* デフォルト: 1列4行（縦長・正方形） */
+.preview-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  overflow: hidden;
+}
+
+/* 横幅が縦の 1/4 を超えたら 2列2行 */
+@container frame (aspect-ratio > 1) {
+  .preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
 .widget {
   @apply mx-10 my-6 rounded-4xl bg-white shadow-md border border-black/6 min-w-0 min-h-0
          flex flex-col items-center justify-center gap-4;
