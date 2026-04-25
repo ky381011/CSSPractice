@@ -3,4 +3,31 @@
 .widget {
   @apply mx-10 my-6 rounded-4xl bg-white shadow-md border border-black/6 min-w-0 min-h-0
          flex flex-col items-center justify-center gap-4;
+  container-type: inline-size;
+}
+
+.widget-content {
+  display: contents;
+  transform-origin: center;
+}
+
+/* コンテナ幅に応じて段階的に縮小 */
+@container (max-width: 299px) {
+  .widget-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    scale: 0.75;
+  }
+}
+
+@container (min-width: 300px) and (max-width: 399px) {
+  .widget-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    scale: 0.88;
+  }
 }
