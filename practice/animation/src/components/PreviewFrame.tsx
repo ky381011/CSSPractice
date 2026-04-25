@@ -1,9 +1,16 @@
 import './PreviewFrame.css'
 import { getAnimation01 } from './AnimationSets/Animation01'
+import { getAnimation02 } from './AnimationSets/Animation02'
 import { CopyLabel } from './CopyLabel'
 
-export function PreviewFrame(){
-  const animations = getAnimation01()
+const animationSets = [getAnimation01, getAnimation02]
+
+interface PreviewFrameProps {
+  setIndex: number
+}
+
+export function PreviewFrame({ setIndex }: PreviewFrameProps){
+  const animations = animationSets[setIndex]()
 
   return (
     <>
