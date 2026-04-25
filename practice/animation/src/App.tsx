@@ -10,6 +10,7 @@ const TOTAL_SETS = SET_NAMES.length
 
 function App() {
   const [setIndex, setSetIndex] = useState(0)
+  const [sidebarOpen, setSidebarOpen] = useState(true)
 
   return (
     <>
@@ -18,6 +19,8 @@ function App() {
           sets={SET_NAMES}
           current={setIndex}
           onSelect={setSetIndex}
+          isOpen={sidebarOpen}
+          onToggle={() => setSidebarOpen((prev) => !prev)}
         />
 
         <div className="relative flex-1">
