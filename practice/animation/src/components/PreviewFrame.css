@@ -18,6 +18,13 @@
   overflow: hidden;
 }
 
+/* 縦並び（1列）のときはウィジェットの上下余白を縮小 */
+@container frame (aspect-ratio <= 1) {
+  .widget {
+    @apply my-2;
+  }
+}
+
 /* 横幅が縦の 1/4 を超えたら 2列2行 */
 @container frame (aspect-ratio > 1) {
   .preview-grid {
