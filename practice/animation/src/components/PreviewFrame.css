@@ -30,6 +30,7 @@
   @apply mx-10 my-6 rounded-4xl bg-white shadow-md border border-black/6 min-w-0 min-h-0
          flex flex-col items-center justify-center gap-4;
   container-type: inline-size;
+  overflow: hidden;
 }
 
 .widget-content {
