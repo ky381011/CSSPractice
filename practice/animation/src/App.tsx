@@ -5,7 +5,7 @@ import { NavButton } from './components/NavButton'
 import { SetIndicator } from './components/SetIndicator'
 import { Sidebar } from './components/Sidebar'
 
-const SET_NAMES = ['Animation', 'Transform', 'Rotate', 'Scale & Skew', 'Perspective']
+const SET_NAMES = ['Basic', 'Transform', 'Rotate', 'Scale & Skew', 'Perspective']
 const TOTAL_SETS = SET_NAMES.length
 
 function App() {
