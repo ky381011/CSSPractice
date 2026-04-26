@@ -1,9 +1,9 @@
 import './PreviewFrame.css'
-import { getAnimation01 } from './AnimationSets/AnimationSet01_Basic'
-import { getAnimation02 } from './AnimationSets/AnimationSet02_Shape'
-import { getAnimation03 } from './AnimationSets/AnimationSet03_Compound'
-import { getAnimation04 } from './AnimationSets/AnimationSet04_UI'
-import { getAnimation05 } from './AnimationSets/AnimationSet05_Effect'
+import { getAnimation01 } from './AnimationSets/AnimationSet01_Animation'
+import { getAnimation02 } from './AnimationSets/AnimationSet02_Transform'
+import { getAnimation03 } from './AnimationSets/AnimationSet03_Rotate'
+import { getAnimation04 } from './AnimationSets/AnimationSet04_Scale_Skew'
+import { getAnimation05 } from './AnimationSets/AnimationSet05_Perspective'
 import { CopyLabel } from './CopyLabel'
 
 const animationSets = [getAnimation01, getAnimation02, getAnimation03, getAnimation04, getAnimation05]
