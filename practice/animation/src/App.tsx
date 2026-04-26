@@ -5,7 +5,7 @@ import { NavButton } from './components/NavButton'
 import { SetIndicator } from './components/SetIndicator'
 import { Sidebar } from './components/Sidebar'
 
-const SET_NAMES = ['Built-in Animations', 'Violet Variants']
+const SET_NAMES = ['Built-in Animations', 'Violet Variants', 'Emerald Variants', 'Amber Variants', 'Rose Variants']
 const TOTAL_SETS = SET_NAMES.length
 
 function App() {
