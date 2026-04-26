@@ -6,7 +6,7 @@ export function getAnimation05(): { name: string; element: React.ReactNode }[] {
       name: 'animate-spin (gradient)',
       element: (
         <div className="relative h-12 w-12">
-          <div className="animate-spin absolute inset-0 rounded-full bg-gradient-to-tr from-rose-500 to-transparent" />
+          <div className="animate-spin absolute inset-0 rounded-full bg-linear-to-tr from-rose-500 to-transparent" />
           <div className="absolute inset-1 rounded-full bg-white" />
         </div>
       ),

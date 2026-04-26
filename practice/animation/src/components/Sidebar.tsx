@@ -20,7 +20,7 @@ export function Sidebar({ sets, current, onSelect, isOpen, onToggle }: SidebarPr
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
       >
         <span className={`block h-0.5 bg-slate-500 transition-all duration-300 ${
-          isOpen ? 'w-4 -translate-y-0 rotate-45 translate-y-2' : 'w-4'
+          isOpen ? 'w-4 rotate-45 translate-y-2' : 'w-4'
         }`} />
         <span className={`block h-0.5 bg-slate-500 transition-all duration-300 ${
           isOpen ? 'opacity-0 w-4' : 'w-4'
