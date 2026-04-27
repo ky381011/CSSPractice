@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <div className="flex w-screen h-screen bg-sky-100">
+      <div className={`flex w-screen h-screen transition-colors duration-300 ${mode === 'learning' ? 'bg-red-100' : 'bg-sky-100'}`}>
         <Sidebar
           sets={setNames}
           current={setIndex}
@@ -48,15 +48,18 @@ function App() {
           <NavButton
             direction="left"
             onClick={() => setSetIndex((prev) => (prev - 1 + totalSets) % totalSets)}
+            mode={mode}
           />
           <NavButton
             direction="right"
             onClick={() => setSetIndex((prev) => (prev + 1) % totalSets)}
+            mode={mode}
           />
           <SetIndicator
             total={totalSets}
             current={setIndex}
             onSelect={setSetIndex}
+            mode={mode}
           />
         </div>
       </div>

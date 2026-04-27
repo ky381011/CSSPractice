@@ -61,7 +61,7 @@ export function Sidebar({ sets, current, onSelect, isOpen, onToggle, mode, onMod
             onClick={() => onModeChange('learning')}
             className={`flex-1 py-2 text-xs font-semibold transition-colors ${
               mode === 'learning'
-                ? 'text-sky-600 border-b-2 border-sky-500 bg-sky-50'
+                ? 'text-red-600 border-b-2 border-red-500 bg-red-50'
                 : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
             }`}
           >
@@ -80,7 +80,9 @@ export function Sidebar({ sets, current, onSelect, isOpen, onToggle, mode, onMod
                   onClick={() => onSelect(i)}
                   className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
                     i === current
-                      ? 'bg-sky-50 text-sky-600 font-semibold border-r-2 border-sky-500'
+                      ? mode === 'learning'
+                        ? 'bg-red-50 text-red-600 font-semibold border-r-2 border-red-500'
+                        : 'bg-sky-50 text-sky-600 font-semibold border-r-2 border-sky-500'
                       : 'text-slate-600 hover:bg-slate-50 hover:text-slate-800'
                   }`}
                 >
