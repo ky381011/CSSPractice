@@ -1,7 +1,7 @@
 import './PreviewFrame.css'
-import { getLearning01 } from './LearningSets/LearningSet01_Template'
+import { getLearningXX } from './LearningSets/LearningSetXX_Template'
 
-const learningSets = [getLearning01]
+const learningSets = [getLearningXX]
 
 interface LearningFrameProps {
   setIndex: number
