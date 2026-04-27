@@ -1,16 +1,19 @@
 type Mode = 'animation' | 'learning'
 
 interface SidebarProps {
-  sets: string[]
-  current: number
-  onSelect: (index: number) => void
+  animSets: string[]
+  learnSets: string[]
+  animCurrent: number
+  learnCurrent: number
+  onAnimSelect: (index: number) => void
+  onLearnSelect: (index: number) => void
   isOpen: boolean
   onToggle: () => void
   mode: Mode
   onModeChange: (mode: Mode) => void
 }
 
-export function Sidebar({ sets, current, onSelect, isOpen, onToggle, mode, onModeChange }: SidebarProps) {
+export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnimSelect, onLearnSelect, isOpen, onToggle, mode, onModeChange }: SidebarProps) {
   return (
     <aside
       className={`relative flex flex-col h-full bg-white border-r border-slate-200 shadow-sm shrink-0 transition-[width] duration-300 overflow-hidden ${
@@ -69,29 +72,54 @@ export function Sidebar({ sets, current, onSelect, isOpen, onToggle, mode, onMod
           </button>
         </div>
 
-        <nav className="flex-1 overflow-y-auto py-3">
-          <p className="px-4 mb-1 text-xs font-semibold uppercase tracking-widest text-slate-400">
-            Sets
-          </p>
-          <ul>
-            {sets.map((name, i) => (
-              <li key={i}>
-                <button
-                  onClick={() => onSelect(i)}
-                  className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
-                    i === current
-                      ? mode === 'learning'
-                        ? 'bg-red-50 text-red-600 font-semibold border-r-2 border-red-500'
-                        : 'bg-sky-50 text-sky-600 font-semibold border-r-2 border-sky-500'
-                      : 'text-slate-600 hover:bg-slate-50 hover:text-slate-800'
-                  }`}
-                >
-                  {name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {/* navスライドコンテナ */}
+        <div className="relative flex-1 overflow-hidden">
+          <div
+            className="absolute inset-0 flex transition-transform duration-400 ease-in-out"
+            style={{ transform: mode === 'learning' ? 'translateX(-100%)' : 'translateX(0%)' }}
+          >
+            {/* Animation nav */}
+            <nav className="absolute inset-0 w-full overflow-y-auto py-3" style={{ left: '0%' }}>
+              <p className="px-4 mb-1 text-xs font-semibold uppercase tracking-widest text-slate-400">Sets</p>
+              <ul>
+                {animSets.map((name, i) => (
+                  <li key={i}>
+                    <button
+                      onClick={() => onAnimSelect(i)}
+                      className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
+                        i === animCurrent
+                          ? 'bg-sky-50 text-sky-600 font-semibold border-r-2 border-sky-500'
+                          : 'text-slate-600 hover:bg-slate-50 hover:text-slate-800'
+                      }`}
+                    >
+                      {name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            {/* Learning nav */}
+            <nav className="absolute inset-0 w-full overflow-y-auto py-3" style={{ left: '100%' }}>
+              <p className="px-4 mb-1 text-xs font-semibold uppercase tracking-widest text-red-300">Sets</p>
+              <ul>
+                {learnSets.map((name, i) => (
+                  <li key={i}>
+                    <button
+                      onClick={() => onLearnSelect(i)}
+                      className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
+                        i === learnCurrent
+                          ? 'bg-red-50 text-red-600 font-semibold border-r-2 border-red-500'
+                          : 'text-slate-600 hover:bg-slate-50 hover:text-slate-800'
+                      }`}
+                    >
+                      {name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
     </aside>
   )

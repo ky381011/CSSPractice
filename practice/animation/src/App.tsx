@@ -26,9 +26,12 @@ function App() {
     <>
       <div className={`flex w-screen h-screen transition-colors duration-300 ${mode === 'learning' ? 'bg-red-100' : 'bg-sky-100'}`}>
         <Sidebar
-          sets={setNames}
-          current={setIndex}
-          onSelect={setSetIndex}
+          animSets={ANIMATION_SET_NAMES}
+          learnSets={LEARNING_SET_NAMES}
+          animCurrent={animSetIndex}
+          learnCurrent={learnSetIndex}
+          onAnimSelect={setAnimSetIndex}
+          onLearnSelect={setLearnSetIndex}
           isOpen={sidebarOpen}
           onToggle={() => setSidebarOpen((prev) => !prev)}
           mode={mode}
