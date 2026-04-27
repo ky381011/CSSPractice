@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <div className={`flex w-screen h-screen transition-colors duration-300 ${mode === 'learning' ? 'bg-red-100' : 'bg-sky-100'}`}>
+      <div className={`flex w-screen h-screen transition-colors duration-300 ${mode === 'learning' ? 'bg-red-50' : 'bg-sky-100'}`}>
         <Sidebar
           animSets={ANIMATION_SET_NAMES}
           learnSets={LEARNING_SET_NAMES}

@@ -6,7 +6,7 @@ interface NavButtonProps {
 
 export function NavButton({ direction, onClick, mode = 'animation' }: NavButtonProps) {
   const isLeft = direction === 'left'
-  const hoverColor = mode === 'learning' ? 'hover:text-red-600' : 'hover:text-sky-600'
+  const hoverColor = mode === 'learning' ? 'hover:text-red-400' : 'hover:text-sky-600'
 
   return (
     <button
