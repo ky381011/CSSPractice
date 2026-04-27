@@ -58,7 +58,7 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
               }`}
             />
             <button
-              onClick={() => onModeChange('animation')}
+              onClick={() => onModeChange(mode === 'animation' ? 'learning' : 'animation')}
               className={`relative z-10 flex-1 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
                 mode === 'animation' ? 'text-white' : 'text-slate-400 hover:text-slate-600'
               }`}
@@ -66,7 +66,7 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
               Animation
             </button>
             <button
-              onClick={() => onModeChange('learning')}
+              onClick={() => onModeChange(mode === 'learning' ? 'animation' : 'learning')}
               className={`relative z-10 flex-1 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
                 mode === 'learning' ? 'text-white' : 'text-slate-400 hover:text-slate-600'
               }`}
