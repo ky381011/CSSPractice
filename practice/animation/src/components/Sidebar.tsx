@@ -48,28 +48,32 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
           <h1 className="text-lg font-bold text-slate-700 mt-0.5">CSS Practice</h1>
         </div>
 
-        {/* モード切替タブ */}
-        <div className="flex border-b border-slate-100 shrink-0">
-          <button
-            onClick={() => onModeChange('animation')}
-            className={`flex-1 py-2 text-xs font-semibold transition-colors ${
-              mode === 'animation'
-                ? 'text-sky-600 border-b-2 border-sky-500 bg-sky-50'
-                : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
-            }`}
-          >
-            Animation
-          </button>
-          <button
-            onClick={() => onModeChange('learning')}
-            className={`flex-1 py-2 text-xs font-semibold transition-colors ${
-              mode === 'learning'
-                ? 'text-red-600 border-b-2 border-red-500 bg-red-50'
-                : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
-            }`}
-          >
-            Learning
-          </button>
+        {/* モード切替ピル */}
+        <div className="px-3 py-3 shrink-0">
+          <div className="relative flex rounded-full bg-slate-100 p-1">
+            {/* スライドする背景ピル */}
+            <span
+              className={`absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-full shadow-sm transition-all duration-300 ease-in-out ${
+                mode === 'learning' ? 'bg-red-500 left-[calc(50%+4px)]' : 'bg-sky-500 left-1'
+              }`}
+            />
+            <button
+              onClick={() => onModeChange('animation')}
+              className={`relative z-10 flex-1 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
+                mode === 'animation' ? 'text-white' : 'text-slate-400 hover:text-slate-600'
+              }`}
+            >
+              Animation
+            </button>
+            <button
+              onClick={() => onModeChange('learning')}
+              className={`relative z-10 flex-1 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
+                mode === 'learning' ? 'text-white' : 'text-slate-400 hover:text-slate-600'
+              }`}
+            >
+              Learning
+            </button>
+          </div>
         </div>
 
         {/* navスライドコンテナ */}
