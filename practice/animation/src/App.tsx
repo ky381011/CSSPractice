@@ -35,14 +35,22 @@ function App() {
           onModeChange={setMode}
         />
 
-        <div className="relative flex-1">
-          {/* ボタン・インジケーターと間隔を確保するインセット */}
-          <div className="absolute inset-0 px-16 pt-4 pb-12">
-            {mode === 'animation' ? (
+        <div className="relative flex-1 overflow-hidden">
+          {/* スライドコンテナ */}
+          <div
+            className="absolute inset-0 flex transition-transform duration-400 ease-in-out"
+            style={{ transform: mode === 'learning' ? 'translateX(-100%)' : 'translateX(0%)' }}
+          >
+            {/* Animation パネル */}
+            <div className="absolute inset-0 w-full px-16 pt-4 pb-12"
+              style={{ left: '0%' }}>
               <PreviewFrame setIndex={animSetIndex} />
-            ) : (
+            </div>
+            {/* Learning パネル */}
+            <div className="absolute inset-0 w-full px-16 pt-4 pb-12"
+              style={{ left: '100%' }}>
               <LearningFrame setIndex={learnSetIndex} />
-            )}
+            </div>
           </div>
 
           <NavButton
