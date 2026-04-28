@@ -37,8 +37,8 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
         }`} />
       </button>
 
-      {/* サイドバーコンテンツ（開いているときのみ表示） */}
-      <div className={`flex flex-col flex-1 transition-opacity duration-200 ${
+      {/* ヘッダー（開いているときのみ表示） */}
+      <div className={`shrink-0 transition-opacity duration-200 ${
         isOpen ? 'opacity-100 delay-100' : 'opacity-0 pointer-events-none'
       }`}>
         <div className="px-5 pt-5 pb-4 pr-12 border-b border-slate-100">
@@ -47,41 +47,44 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
           </span>
           <h1 className="text-lg font-bold text-slate-700 mt-0.5">CSS Practice</h1>
         </div>
+      </div>
 
-        {/* モード切替ピル */}
-        <div className="px-3 py-3 shrink-0">
-          <div className="relative flex rounded-full bg-slate-100 p-1">
-            {/* スライドする背景ピル */}
-            <span
-              className={`absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-full shadow-sm transition-all duration-300 ease-in-out ${
-                mode === 'learning' ? 'bg-red-400 left-[calc(50%+4px)]' : 'bg-sky-500 left-1'
-              }`}
-            />
-            <button
-              onClick={() => onModeChange(mode === 'animation' ? 'learning' : 'animation')}
-              className={`relative z-10 flex-1 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
-                mode === 'animation' ? 'text-white' : 'text-slate-400 hover:text-slate-600'
-              }`}
-            >
-              Animation
-            </button>
-            <button
-              onClick={() => onModeChange(mode === 'learning' ? 'animation' : 'learning')}
-              className={`relative z-10 flex-1 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
-                mode === 'learning' ? 'text-white' : 'text-slate-400 hover:text-slate-600'
-              }`}
-            >
-              Learning
-            </button>
-          </div>
-        </div>
-
-        {/* navスライドコンテナ */}
-        <div className="relative flex-1 overflow-hidden">
-          <div
-            className="absolute inset-0 flex transition-transform duration-400 ease-in-out"
-            style={{ transform: mode === 'learning' ? 'translateX(-100%)' : 'translateX(0%)' }}
+      {/* モード切替ピル */}
+      <div className={`shrink-0 overflow-hidden transition-all duration-300 ${isOpen ? 'px-3 py-3 h-auto' : 'h-0 px-3 py-0'}`}>
+        <div className="relative flex rounded-full bg-slate-100 p-1">
+          {/* スライドする背景ピル */}
+          <span
+            className={`absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-full shadow-sm transition-all duration-300 ease-in-out ${
+              mode === 'learning' ? 'bg-red-400 left-[calc(50%+4px)]' : 'bg-sky-500 left-1'
+            }`}
+          />
+          <button
+            onClick={() => onModeChange(mode === 'animation' ? 'learning' : 'animation')}
+            className={`relative z-10 flex-1 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
+              mode === 'animation' ? 'text-white' : 'text-slate-400 hover:text-slate-600'
+            }`}
           >
+            Animation
+          </button>
+          <button
+            onClick={() => onModeChange(mode === 'learning' ? 'animation' : 'learning')}
+            className={`relative z-10 flex-1 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
+              mode === 'learning' ? 'text-white' : 'text-slate-400 hover:text-slate-600'
+            }`}
+          >
+            Learning
+          </button>
+        </div>
+      </div>
+
+      {/* navスライドコンテナ（開いているときのみ表示） */}
+      <div className={`relative flex-1 overflow-hidden transition-opacity duration-200 ${
+        isOpen ? 'opacity-100 delay-100' : 'opacity-0 pointer-events-none'
+      }`}>
+        <div
+          className="absolute inset-0 flex transition-transform duration-400 ease-in-out"
+          style={{ transform: mode === 'learning' ? 'translateX(-100%)' : 'translateX(0%)' }}
+        >
             {/* Animation nav */}
             <nav className="absolute inset-0 w-full overflow-y-auto py-3" style={{ left: '0%' }}>
               <p className="px-4 mb-1 text-xs font-semibold uppercase tracking-widest text-slate-400">Sets</p>
@@ -124,7 +127,6 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
             </nav>
           </div>
         </div>
-      </div>
     </aside>
   )
 }
