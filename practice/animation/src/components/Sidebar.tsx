@@ -1,3 +1,5 @@
+import { useRef, useState, useEffect } from 'react'
+
 type Mode = 'animation' | 'learning'
 
 interface SidebarProps {
@@ -13,12 +15,52 @@ interface SidebarProps {
   onModeChange: (mode: Mode) => void
 }
 
+const SIDEBAR_CLOSED_WIDTH = 48  // w-12
+const SIDEBAR_DEFAULT_WIDTH = 208 // w-52
+const SIDEBAR_MIN_WIDTH = 160
+const SIDEBAR_MAX_WIDTH = 400
+
 export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnimSelect, onLearnSelect, isOpen, onToggle, mode, onModeChange }: SidebarProps) {
+  const [sidebarWidth, setSidebarWidth] = useState(SIDEBAR_DEFAULT_WIDTH)
+  const isDragging = useRef(false)
+  const dragStartX = useRef(0)
+  const dragStartWidth = useRef(0)
+
+  useEffect(() => {
+    const onMouseMove = (e: MouseEvent) => {
+      if (!isDragging.current) return
+      const delta = e.clientX - dragStartX.current
+      const newWidth = Math.min(SIDEBAR_MAX_WIDTH, Math.max(SIDEBAR_MIN_WIDTH, dragStartWidth.current + delta))
+      setSidebarWidth(newWidth)
+    }
+    const onMouseUp = () => {
+      isDragging.current = false
+      document.body.style.cursor = ''
+      document.body.style.userSelect = ''
+    }
+    window.addEventListener('mousemove', onMouseMove)
+    window.addEventListener('mouseup', onMouseUp)
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove)
+      window.removeEventListener('mouseup', onMouseUp)
+    }
+  }, [])
+
+  const handleDragStart = (e: React.MouseEvent) => {
+    e.preventDefault()
+    isDragging.current = true
+    dragStartX.current = e.clientX
+    dragStartWidth.current = sidebarWidth
+    document.body.style.cursor = 'col-resize'
+    document.body.style.userSelect = 'none'
+  }
+
   return (
     <aside
-      className={`relative flex flex-col h-full bg-white border-r border-slate-200 shadow-sm shrink-0 transition-[width] duration-300 overflow-hidden ${
-        isOpen ? 'w-52' : 'w-12'
+      className={`relative flex flex-col h-full bg-white border-r border-slate-200 shadow-sm shrink-0 overflow-hidden ${
+        isOpen ? 'transition-none' : 'transition-[width] duration-300'
       }`}
+      style={{ width: isOpen ? sidebarWidth : SIDEBAR_CLOSED_WIDTH }}
     >
       {/* ハンバーガーボタン */}
       <button
@@ -127,6 +169,14 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
             </nav>
           </div>
         </div>
+
+      {/* リサイズハンドル（開いているときのみ） */}
+      {isOpen && (
+        <div
+          onMouseDown={handleDragStart}
+          className="absolute top-0 right-0 w-1 h-full cursor-col-resize hover:bg-sky-400 active:bg-sky-500 transition-colors z-20"
+        />
+      )}
     </aside>
   )
 }
