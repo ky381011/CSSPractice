@@ -93,16 +93,16 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
 
       {/* モード切替ピル */}
       <div className={`shrink-0 overflow-hidden transition-all duration-300 ${isOpen ? 'px-3 py-3 h-auto' : 'h-0 px-3 py-0'}`}>
-        <div className="relative flex rounded-full bg-slate-100 p-1">
+        <div className="relative flex flex-col rounded-2xl bg-slate-100 p-1">
           {/* スライドする背景ピル */}
           <span
-            className={`absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-full shadow-sm transition-all duration-300 ease-in-out ${
-              mode === 'learning' ? 'bg-red-400 left-[calc(50%+4px)]' : 'bg-sky-500 left-1'
+            className={`absolute left-1 right-1 h-[calc(50%-4px)] rounded-full shadow-sm transition-all duration-300 ease-in-out ${
+              mode === 'learning' ? 'bg-red-400 top-[calc(50%+4px)]' : 'bg-sky-500 top-1'
             }`}
           />
           <button
             onClick={() => onModeChange(mode === 'animation' ? 'learning' : 'animation')}
-            className={`relative z-10 flex-1 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
+            className={`relative z-10 w-full py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
               mode === 'animation' ? 'text-white' : 'text-slate-400 hover:text-slate-600'
             }`}
           >
@@ -110,7 +110,7 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
           </button>
           <button
             onClick={() => onModeChange(mode === 'learning' ? 'animation' : 'learning')}
-            className={`relative z-10 flex-1 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
+            className={`relative z-10 w-full py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
               mode === 'learning' ? 'text-white' : 'text-slate-400 hover:text-slate-600'
             }`}
           >
