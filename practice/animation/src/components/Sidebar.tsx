@@ -102,19 +102,25 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
           />
           <button
             onClick={() => onModeChange(mode === 'animation' ? 'learning' : 'animation')}
-            className={`relative z-10 w-full py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
+            className={`relative z-10 w-full py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 flex items-center justify-center gap-1.5 ${
               mode === 'animation' ? 'text-white' : 'text-slate-400 hover:text-slate-600'
             }`}
           >
             Animation
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
           </button>
           <button
             onClick={() => onModeChange(mode === 'learning' ? 'animation' : 'learning')}
-            className={`relative z-10 w-full py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
+            className={`relative z-10 w-full py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 flex items-center justify-center gap-1.5 ${
               mode === 'learning' ? 'text-white' : 'text-slate-400 hover:text-slate-600'
             }`}
           >
             Learning
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+            </svg>
           </button>
         </div>
       </div>
