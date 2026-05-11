@@ -7,7 +7,7 @@ import { SetIndicator } from './components/SetIndicator'
 import { Sidebar } from './components/Sidebar'
 
 const ANIMATION_SET_NAMES = ['Basic', 'Transform', 'Rotate', 'Scale & Skew', 'Perspective']
-const LEARNING_SET_NAMES = ['Toggle', 'Template']
+const LEARNING_SET_NAMES = ['Spin', 'Template']
 
 type Mode = 'animation' | 'learning'
 

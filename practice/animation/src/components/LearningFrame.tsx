@@ -1,5 +1,5 @@
 import './PreviewFrame.css'
-import { getLearning01 } from './LearningSets/LearningSet01_Toggle'
+import { getLearning01 } from './LearningSets/LearningSet01_Spin'
 import { getLearningXX } from './LearningSets/LearningSetXX_Template'
 
 const learningSets = [getLearning01, getLearningXX]

@@ -12,8 +12,10 @@ const PlaceholderFrame = ({ label }: { label: string }) => (
 export function getLearning01(): { name: string; element: React.ReactNode }[] {
   return [
     {
-      name: 'Template-1',
-      element: <PlaceholderFrame label="編集中" />,
+      name: 'Spin',
+      element: (
+        <div className="animate-spin [animation-duration:1s] rounded-full h-12 w-12 border-4 border-amber-300 border-t-amber-600" />
+      ),
     },
     {
       name: 'Template-2',
