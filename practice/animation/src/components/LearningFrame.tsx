@@ -18,6 +18,7 @@ export function LearningFrame({ setIndex }: LearningFrameProps) {
           <div key={item.name} className="widget">
             <div className="widget-content">
               {item.element}
+              <span className="text-sm font-mono text-slate-500">{item.name}</span>
             </div>
           </div>
         ))}
