@@ -1,5 +1,7 @@
 import React from 'react'
 
+export const setName = 'Basic'
+
 export function getAnimation01(): { name: string; element: React.ReactNode }[] {
   return [
     {

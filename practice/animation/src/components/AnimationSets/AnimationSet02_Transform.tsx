@@ -1,5 +1,7 @@
 import React from 'react'
 
+export const setName = 'Transform'
+
 export function getAnimation02(): { name: string; element: React.ReactNode }[] {
   return [
     {

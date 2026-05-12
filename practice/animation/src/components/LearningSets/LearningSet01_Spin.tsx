@@ -1,5 +1,7 @@
 import React from 'react'
 
+export const setName = 'Spin'
+
 export function getLearning01(): { name: string; element: React.ReactNode }[] {
   return [
     {

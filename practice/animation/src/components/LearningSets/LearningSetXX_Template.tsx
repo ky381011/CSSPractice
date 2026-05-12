@@ -1,5 +1,7 @@
 import React from 'react'
 
+export const setName = 'Template'
+
 const PlaceholderFrame = ({ label }: { label: string }) => (
   <div className="flex flex-col items-center justify-center flex-1 min-h-0 w-full rounded-lg border-2 border-dashed border-slate-300 gap-2">
     <svg className="h-6 w-6 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">

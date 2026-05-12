@@ -1,5 +1,7 @@
 import React from 'react'
 
+export const setName = 'Perspective'
+
 export function getAnimation05(): { name: string; element: React.ReactNode }[] {
   return [
     {

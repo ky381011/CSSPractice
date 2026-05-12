@@ -1,5 +1,7 @@
 import React from 'react'
 
+export const setName = 'Scale & Skew'
+
 export function getAnimation04(): { name: string; element: React.ReactNode }[] {
   return [
     {

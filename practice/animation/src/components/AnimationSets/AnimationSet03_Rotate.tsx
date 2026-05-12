@@ -1,5 +1,7 @@
 import React from 'react'
 
+export const setName = 'Rotate'
+
 export function getAnimation03(): { name: string; element: React.ReactNode }[] {
   return [
     {

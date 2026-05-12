@@ -6,8 +6,11 @@ import { NavButton } from './components/NavButton'
 import { SetIndicator } from './components/SetIndicator'
 import { Sidebar } from './components/Sidebar'
 
-const ANIMATION_SET_NAMES = ['Basic', 'Transform', 'Rotate', 'Scale & Skew', 'Perspective']
-const LEARNING_SET_NAMES = ['Spin', 'Template']
+const animModules = import.meta.glob('./components/AnimationSets/*.tsx', { eager: true }) as Record<string, { setName: string }>
+const learnModules = import.meta.glob('./components/LearningSets/*.tsx', { eager: true }) as Record<string, { setName: string }>
+
+const ANIMATION_SET_NAMES = Object.keys(animModules).sort().map(key => animModules[key].setName)
+const LEARNING_SET_NAMES = Object.keys(learnModules).sort().map(key => learnModules[key].setName)
 
 type Mode = 'animation' | 'learning'
 
