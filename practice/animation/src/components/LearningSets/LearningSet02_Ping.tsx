@@ -33,8 +33,12 @@ export function getLearning02(): { name: string; element: React.ReactNode }[] {
       ),
     },
     {
-      name: 'Ping-3',
-      element: <PlaceholderFrame label="ここに学習コンテンツを追加" />,
+      name: 'Hover',
+      element: (
+        <div className="relative flex h-full w-full items-center justify-center">
+          <div className='h-2 w-2 animate-ping rounded-full bg-amber-400'></div>
+        </div>
+      ),
     },
     {
       name: 'Ping-4',
