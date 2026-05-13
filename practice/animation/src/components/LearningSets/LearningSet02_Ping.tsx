@@ -16,14 +16,21 @@ export function getLearning02(): { name: string; element: React.ReactNode }[] {
     {
       name: 'Base',
       element: (
-        <div className="relative flex h-12 w-12 items-center justify-center">
-          <div className=' h-2 w-2 animate-ping rounded-full bg-amber-400'></div>
+        <div className="relative flex h-full w-full items-center justify-center">
+          <div className='h-2 w-2 animate-ping rounded-full bg-amber-400'></div>
         </div>
       ),
     },
     {
-      name: 'Ping-2',
-      element: <PlaceholderFrame label="ここに学習コンテンツを追加" />,
+      name: 'Left Up',
+      element: (
+        <div className="flex h-full w-full items-center justify-center">
+          <div className='relative h-8 w-32 rounded-full bg-amber-100 text-center'>
+            <span className="absolute -top-1 -left-1 inline-flex h-4 w-4 animate-ping rounded-full bg-amber-400 opacity-75"></span>
+            Click Me!!
+          </div>
+        </div>
+      ),
     },
     {
       name: 'Ping-3',
