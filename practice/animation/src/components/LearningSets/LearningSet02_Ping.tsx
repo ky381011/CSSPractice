@@ -36,7 +36,7 @@ export function getLearning02(): { name: string; element: React.ReactNode }[] {
       name: 'Hover',
       element: (
         <div className="relative flex h-full w-full items-center justify-center">
-          <div className='h-2 w-2 animate-ping rounded-full bg-amber-400'></div>
+          <div className='h-12 w-12 rounded-full hover:animate-ping bg-amber-400'></div>
         </div>
       ),
     },
