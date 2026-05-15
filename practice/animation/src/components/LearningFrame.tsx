@@ -1,9 +1,10 @@
 import './PreviewFrame.css'
 import { getLearning01 } from './LearningSets/LearningSet01_Spin'
 import { getLearning02 } from './LearningSets/LearningSet02_Ping'
+import { getLearning03 } from './LearningSets/LearningSet03_Pulse'
 import { getLearningXX } from './LearningSets/LearningSetXX_Template'
 
-const learningSets = [getLearning01, getLearning02, getLearningXX]
+const learningSets = [getLearning01, getLearning02, getLearning03, getLearningXX]
 
 interface LearningFrameProps {
   setIndex: number
