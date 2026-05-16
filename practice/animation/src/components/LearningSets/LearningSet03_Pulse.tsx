@@ -14,8 +14,12 @@ const PlaceholderFrame = ({ label }: { label: string }) => (
 export function getLearning03(): { name: string; element: React.ReactNode }[] {
   return [
     {
-      name: 'Pulse-1',
-      element: <PlaceholderFrame label="ここに学習コンテンツを追加" />,
+      name: 'Base',
+      element: (
+        <div className="relative flex h-full w-full items-center justify-center">
+          <div className='h-12 w-12 animate-pulse rounded-full bg-amber-400'></div>
+        </div>
+      ),
     },
     {
       name: 'Pulse-2',
