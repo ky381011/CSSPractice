@@ -22,8 +22,14 @@ export function getLearning03(): { name: string; element: React.ReactNode }[] {
       ),
     },
     {
-      name: 'Pulse-2',
-      element: <PlaceholderFrame label="ここに学習コンテンツを追加" />,
+      // テキストへの適用: div だけでなくテキストにも animate-pulse は使える
+      // 「読み込み中」の状態をラベルで伝えつつ、視覚的に動きを加える
+      name: 'Text',
+      element: (
+        <div className="flex h-full w-full items-center justify-center">
+          <p className="animate-pulse text-slate-400 text-sm">読み込み中...</p>
+        </div>
+      ),
     },
     {
       name: 'Pulse-3',
