@@ -32,8 +32,31 @@ export function getLearning03(): { name: string; element: React.ReactNode }[] {
       ),
     },
     {
-      name: 'Pulse-3',
-      element: <PlaceholderFrame label="ここに学習コンテンツを追加" />,
+      // ローディングUI: animate-pulse でスケルトンスクリーン風のカードローダーを表現
+      // 実際のコンテンツが読み込まれる前の「仮の形」を灰色のブロックで示す
+      name: 'Loading',
+      element: (
+        <div className="flex h-full w-full items-center justify-center">
+          <div className="w-32 rounded bg-white shadow p-2 space-y-1.5">
+            {/* アバター + 名前エリア */}
+            <div className="flex items-center gap-1.5">
+              <div className="animate-pulse h-5 w-5 rounded-full bg-slate-200" />
+              <div className="flex-1 space-y-0.5">
+                <div className="animate-pulse h-1.5 w-12 rounded bg-slate-200" />
+                <div className="animate-pulse h-1 w-8 rounded bg-slate-200" />
+              </div>
+            </div>
+            {/* 本文エリア */}
+            <div className="space-y-1">
+              <div className="animate-pulse h-1 w-full rounded bg-slate-200" />
+              <div className="animate-pulse h-1 w-5/6 rounded bg-slate-200" />
+              <div className="animate-pulse h-1 w-4/6 rounded bg-slate-200" />
+            </div>
+            {/* ボタンエリア */}
+            <div className="animate-pulse h-4 w-full rounded bg-slate-200" />
+          </div>
+        </div>
+      ),
     },
     {
       name: 'Pulse-4',
