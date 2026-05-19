@@ -2,15 +2,6 @@ import React from 'react'
 
 export const setName = 'Pulse'
 
-const PlaceholderFrame = ({ label }: { label: string }) => (
-  <div className="flex flex-col items-center justify-center flex-1 min-h-0 w-full rounded-lg border-2 border-dashed border-slate-300 gap-2">
-    <svg className="h-6 w-6 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
-    </svg>
-    <span className="text-xs text-slate-400">{label}</span>
-  </div>
-)
-
 export function getLearning03(): { name: string; element: React.ReactNode }[] {
   return [
     {
@@ -59,8 +50,29 @@ export function getLearning03(): { name: string; element: React.ReactNode }[] {
       ),
     },
     {
-      name: 'Pulse-4',
-      element: <PlaceholderFrame label="ここに学習コンテンツを追加" />,
+      name: 'Scale Combination',
+      element: <div
+        className="w-12 h-12 rounded-full bg-amber-400 animate-[glow_2s_ease-in-out_infinite]"
+        style={{
+          animationName: "glow",
+        }}
+      >
+        <style>
+          {`
+            @keyframes glow {
+              0%,100% {
+                opacity: 0.6;
+                transform: scale(1);
+              }
+
+              50% {
+                opacity: 1;
+                transform: scale(1.1);
+              }
+            }
+          `}
+        </style>
+      </div>
     },
   ]
 }
