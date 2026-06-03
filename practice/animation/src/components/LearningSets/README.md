@@ -12,3 +12,4 @@
 - export function getLearningXX(): { name: string; element: React.ReactNode }[] {
 + export function getLearning05(): { name: string; element: React.ReactNode }[] {
 ```
+4. `LearningFrame.tsx` に `import` を追加
