@@ -13,3 +13,5 @@
 + export function getLearning05(): { name: string; element: React.ReactNode }[] {
 ```
 4. `LearningFrame.tsx` に `import` を追加
+5. `LearningFrame.tsx` の `learningSets` にコンポーネントを追加
+
