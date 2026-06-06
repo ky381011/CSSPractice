@@ -15,3 +15,8 @@
 4. `LearningFrame.tsx` に `import` を追加
 5. `LearningFrame.tsx` の `learningSets` にコンポーネントを追加
 
+## フレームの編集
+1. 4つの要素を以下の型で編集する
+```tsx
+{ name: string; element: React.ReactNode }
+```
