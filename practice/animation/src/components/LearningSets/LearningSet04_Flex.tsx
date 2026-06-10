@@ -35,8 +35,15 @@ export function getLearning04(): { name: string; element: React.ReactNode }[] {
       ),
     },
     {
-      name: 'Bounce-3',
-      element: <PlaceholderFrame label="ここに学習コンテンツを追加" />,
+      name: 'Flex Column',
+      element: (
+        <div className='flex flex-col'>
+          <div className='w-4 h-4 bg-amber-200 rounded-sm border-amber-200'></div>
+          <div className='w-4 h-4 bg-amber-300 rounded-sm border-amber-300'></div>
+          <div className='w-4 h-4 bg-amber-400 rounded-sm border-amber-400'></div>
+          <div className='w-4 h-4 bg-amber-500 rounded-sm border-amber-500'></div>
+        </div>
+      ),
     },
     {
       name: 'Bounce-4',
