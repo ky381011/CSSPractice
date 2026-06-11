@@ -49,10 +49,10 @@ export function getLearning04(): { name: string; element: React.ReactNode }[] {
       name: 'Flex Combiantion',
       element: (
         <div className='flex flex-wrap w-20 h-20'>
-          <div className='w-8 h-8 bg-amber-200 rounded-sm border-amber-200'></div>
-          <div className='w-8 h-8 bg-amber-300 rounded-sm border-amber-300'></div>
-          <div className='w-8 h-8 bg-amber-400 rounded-sm border-amber-400'></div>
-          <div className='w-8 h-8 bg-amber-500 rounded-sm border-amber-500'></div>
+          <div className='w-8 h-8 m-1 bg-amber-200 rounded-sm border-amber-200'></div>
+          <div className='w-8 h-8 m-1 bg-amber-300 rounded-sm border-amber-300'></div>
+          <div className='w-8 h-8 m-1 bg-amber-400 rounded-sm border-amber-400'></div>
+          <div className='w-8 h-8 m-1 bg-amber-500 rounded-sm border-amber-500'></div>
         </div>
       ),
     },
