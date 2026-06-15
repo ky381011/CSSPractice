@@ -3,9 +3,10 @@ import { getLearning01 } from './LearningSets/LearningSet01_Spin'
 import { getLearning02 } from './LearningSets/LearningSet02_Ping'
 import { getLearning03 } from './LearningSets/LearningSet03_Pulse'
 import { getLearning04 } from './LearningSets/LearningSet04_Flex'
+import { getLearning05 } from './LearningSets/LearningSet05_Flex'
 import { getLearningXX } from './LearningSets/LearningSetXX_Template'
 
-const learningSets = [getLearning01, getLearning02, getLearning03, getLearning04, getLearningXX]
+const learningSets = [getLearning01, getLearning02, getLearning03, getLearning04, getLearning05, getLearningXX]
 
 interface LearningFrameProps {
   setIndex: number
