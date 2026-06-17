@@ -1,4 +1,5 @@
 import './PreviewFrame.css'
+import { useState, useRef, useEffect } from 'react'
 import { getAnimation01 } from './AnimationSets/AnimationSet01_Basic'
 import { getAnimation02 } from './AnimationSets/AnimationSet02_Transform'
 import { getAnimation03 } from './AnimationSets/AnimationSet03_Rotate'
@@ -14,13 +15,42 @@ interface PreviewFrameProps {
 
 export function PreviewFrame({ setIndex }: PreviewFrameProps){
   const animations = animationSets[setIndex]()
+  const [widths, setWidths] = useState<{ [key: string]: number }>({})
+  const contentRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
+
+  const handleMouseDown = (name: string, e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault()
+    const startX = e.clientX
+    const widget = contentRefs.current[name]
+    if (!widget) return
+
+    const startWidth = widget.offsetWidth
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const diff = e.clientX - startX
+      const newWidth = Math.max(80, startWidth + diff)
+      widget.style.width = `${newWidth}px`
+    }
+
+    const handleMouseUp = () => {
+      document.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('mouseup', handleMouseUp)
+    }
+
+    document.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('mouseup', handleMouseUp)
+  }
 
   return (
     <div className="preview-wrapper">
       <div className="preview-grid">
         {animations.map((anim) => (
           <div key={anim.name} className="widget">
-            <div className="widget-content">
+            <div 
+              className="widget-content" 
+              ref={(el) => { if (el) contentRefs.current[anim.name] = el }}
+              onMouseDown={(e) => handleMouseDown(anim.name, e)}
+            >
               {anim.element}
               <CopyLabel name={anim.name} />
             </div>
