@@ -25,8 +25,16 @@ export function LearningFrame({ setIndex }: LearningFrameProps) {
     if (!widget) return
 
     const startWidth = widget.offsetWidth
+    const previewWrapper = widget.closest('.preview-wrapper') as HTMLDivElement
+    if (!previewWrapper) return
 
     const handleMouseMove = (e: MouseEvent) => {
+      // マウスがpreview-wrapper内にあるかチェック
+      const rect = previewWrapper.getBoundingClientRect()
+      if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+        return
+      }
+
       const diff = e.clientX - startX
       const newWidth = Math.max(80, startWidth + diff)
       widget.style.width = `${newWidth}px`
