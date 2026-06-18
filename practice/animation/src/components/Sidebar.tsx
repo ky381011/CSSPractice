@@ -37,6 +37,7 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
       isDragging.current = false
       document.body.style.cursor = ''
       document.body.style.userSelect = ''
+      document.documentElement.style.userSelect = ''
     }
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('mouseup', onMouseUp)
@@ -53,6 +54,7 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
     dragStartWidth.current = sidebarWidth
     document.body.style.cursor = 'col-resize'
     document.body.style.userSelect = 'none'
+    document.documentElement.style.userSelect = 'none'
   }
 
   return (
@@ -180,7 +182,7 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
       {isOpen && (
         <div
           onMouseDown={handleDragStart}
-          className="absolute top-0 right-0 w-1 h-full cursor-col-resize hover:bg-sky-400 active:bg-sky-500 transition-colors z-20"
+          className="absolute top-0 right-0 w-1 h-full cursor-col-resize hover:bg-sky-400 active:bg-sky-500 transition-colors z-20 select-none"
         />
       )}
     </aside>
