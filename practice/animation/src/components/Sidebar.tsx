@@ -35,9 +35,13 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
     }
     const onMouseUp = () => {
       isDragging.current = false
+      document.body.classList.remove('dragging')
       document.body.style.cursor = ''
       document.body.style.userSelect = ''
+      document.body.style.webkitUserSelect = ''
       document.documentElement.style.userSelect = ''
+      document.documentElement.style.webkitUserSelect = ''
+      document.body.style.pointerEvents = ''
     }
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('mouseup', onMouseUp)
@@ -52,9 +56,12 @@ export function Sidebar({ animSets, learnSets, animCurrent, learnCurrent, onAnim
     isDragging.current = true
     dragStartX.current = e.clientX
     dragStartWidth.current = sidebarWidth
+    document.body.classList.add('dragging')
     document.body.style.cursor = 'col-resize'
     document.body.style.userSelect = 'none'
+    document.body.style.webkitUserSelect = 'none'
     document.documentElement.style.userSelect = 'none'
+    document.documentElement.style.webkitUserSelect = 'none'
   }
 
   return (
