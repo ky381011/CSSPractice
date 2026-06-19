@@ -28,21 +28,22 @@ export function LearningFrame({ setIndex }: LearningFrameProps) {
     const previewWrapper = widget.closest('.preview-wrapper') as HTMLDivElement
     if (!previewWrapper) return
 
+    const handleMouseUp = () => {
+      document.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('mouseup', handleMouseUp)
+    }
+
     const handleMouseMove = (e: MouseEvent) => {
       // マウスがpreview-wrapper内にあるかチェック
       const rect = previewWrapper.getBoundingClientRect()
       if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+        handleMouseUp()
         return
       }
 
       const diff = e.clientX - startX
       const newWidth = Math.max(80, startWidth + diff)
       widget.style.width = `${newWidth}px`
-    }
-
-    const handleMouseUp = () => {
-      document.removeEventListener('mousemove', handleMouseMove)
-      document.removeEventListener('mouseup', handleMouseUp)
     }
 
     document.addEventListener('mousemove', handleMouseMove)
