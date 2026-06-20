@@ -24,9 +24,11 @@ export function LearningFrame({ setIndex }: LearningFrameProps) {
     const widget = contentRefs.current[name]
     if (!widget) return
 
-    const startWidth = widget.offsetWidth
     const previewWrapper = widget.closest('.preview-wrapper') as HTMLDivElement
     if (!previewWrapper) return
+
+    const maxWidth = previewWrapper.offsetWidth / 2
+    const startWidth = widget.offsetWidth
 
     const handleMouseUp = () => {
       document.removeEventListener('mousemove', handleMouseMove)
@@ -42,8 +44,10 @@ export function LearningFrame({ setIndex }: LearningFrameProps) {
       }
 
       const diff = e.clientX - startX
-      const newWidth = Math.max(80, startWidth + diff)
+      const newWidth = Math.max(0, Math.min(maxWidth, startWidth + diff))
+      const scale = maxWidth > 0 ? newWidth / startWidth : 0
       widget.style.width = `${newWidth}px`
+      widget.style.transform = `scaleX(${scale})`
     }
 
     document.addEventListener('mousemove', handleMouseMove)
