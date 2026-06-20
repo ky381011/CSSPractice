@@ -1,5 +1,4 @@
 import './PreviewFrame.css'
-import { useState, useRef } from 'react'
 import { getLearning01 } from './LearningSets/LearningSet01_Spin'
 import { getLearning02 } from './LearningSets/LearningSet02_Ping'
 import { getLearning03 } from './LearningSets/LearningSet03_Pulse'
@@ -15,44 +14,6 @@ interface LearningFrameProps {
 
 export function LearningFrame({ setIndex }: LearningFrameProps) {
   const items = learningSets[setIndex]()
-  const [widths, setWidths] = useState<{ [key: string]: number }>({})
-  const contentRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
-
-  const handleMouseDown = (name: string, e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault()
-    const startX = e.clientX
-    const widget = contentRefs.current[name]
-    if (!widget) return
-
-    const previewWrapper = widget.closest('.preview-wrapper') as HTMLDivElement
-    if (!previewWrapper) return
-
-    const maxWidth = previewWrapper.offsetWidth / 2
-    const startWidth = widget.offsetWidth
-
-    const handleMouseUp = () => {
-      document.removeEventListener('mousemove', handleMouseMove)
-      document.removeEventListener('mouseup', handleMouseUp)
-    }
-
-    const handleMouseMove = (e: MouseEvent) => {
-      // マウスがpreview-wrapper内にあるかチェック
-      const rect = previewWrapper.getBoundingClientRect()
-      if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
-        handleMouseUp()
-        return
-      }
-
-      const diff = e.clientX - startX
-      const newWidth = Math.max(0, Math.min(maxWidth, startWidth + diff))
-      const scale = maxWidth > 0 ? newWidth / startWidth : 0
-      widget.style.width = `${newWidth}px`
-      widget.style.transform = `scaleX(${scale})`
-    }
-
-    document.addEventListener('mousemove', handleMouseMove)
-    document.addEventListener('mouseup', handleMouseUp)
-  }
 
   return (
     <div className="preview-wrapper">
@@ -61,8 +22,6 @@ export function LearningFrame({ setIndex }: LearningFrameProps) {
           <div key={item.name} className="widget">
             <div 
               className="widget-content"
-              ref={(el) => { if (el) contentRefs.current[item.name] = el }}
-              onMouseDown={(e) => handleMouseDown(item.name, e)}
             >
               {item.element}
               <span className="text-sm font-mono text-slate-500">{item.name}</span>
