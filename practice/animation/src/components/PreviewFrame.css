@@ -34,7 +34,7 @@
 }
 
 .widget {
-  @apply mx-10 my-6 rounded-4xl bg-white shadow-md border border-black/6 min-w-0 min-h-0
+  @apply mx-10 my-6 rounded-4xl bg-white shadow-md min-w-0 min-h-0
          flex flex-col items-center justify-center gap-4;
   container-type: inline-size;
   overflow: hidden;
@@ -50,24 +50,6 @@
   min-width: 80px;
   padding: 0.5rem;
   position: relative;
-}
-
-.widget-content::after {
-  content: '';
-  position: absolute;
-  right: -4px;
-  top: 0;
-  bottom: 0;
-  width: 8px;
-  cursor: col-resize;
-  background: linear-gradient(to right, transparent, #94a3b8, transparent);
-  opacity: 0.6;
-  transition: opacity 0.2s;
-}
-
-.widget-content:hover::after {
-  opacity: 1;
-  background: linear-gradient(to right, transparent, #475569, transparent);
 }
 
 /* コンテナ幅に応じて段階的に縮小 */
