@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const setName = 'Flex 1'
+export const setName = 'Flex'
 
 export function getLearning04(): { name: string; element: React.ReactNode }[] {
   return [
