@@ -2,14 +2,37 @@ import React from 'react'
 
 export const setName = 'Grid'
 
-// JSXコンポーネントとして利用するため頭文字は大文字
+/**
+ * MiniSquare - 小さい正方形コンポーネント
+ * 
+ * グリッドやフレックスボックスのデモ用の小さな装飾要素
+ * 幅・高さ：2x2 (w-2 h-2)
+ * 背景色：白 (bg-white)
+ * 枠線：白 (border-white)
+ * 丸み：下部に丸み (rounded-b-xs)
+ * 
+ * @returns {JSX.Element} 小さい白い正方形
+ */
 const MiniSquare = () => {
   return (
     <div className='w-2 h-2 bg-white border-white rounded-b-xs'></div>
   )
 }
 
-// 指定した個数のMiniSquareを横並べで返す
+/**
+ * MiniSquareGroup - 複数のMiniSquareを配置するコンポーネント
+ * 
+ * 指定した個数のMiniSquareを、指定したレイアウトで横並べ（またはカスタム配置）で返す。
+ * デフォルトではフレックスボックスの行方向（横並べ）で、要素間に1単位のギャップを設定。
+ * 
+ * @param {number} count - 表示するMiniSquareの個数（必須）
+ * @param {string} [className='flex flex-row gap-1'] - カスタムCSSクラス
+ *   - デフォルト：flex flex-row gap-1 (横並べ)
+ *   - 例：'flex flex-col gap-2' (縦並べ、ギャップ拡大)
+ *   - 例：'grid grid-cols-2 gap-1' (グリッド配置)
+ * 
+ * @returns {JSX.Element} MiniSquareを配置したコンテナ
+ */
 const MiniSquareGroup = ({ count, className = 'flex flex-row gap-1' }: { count: number; className?: string }) => {
   return (
     <div className={className}>
