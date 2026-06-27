@@ -9,6 +9,17 @@ const MiniSquare = () => {
   )
 }
 
+// 指定した個数のMiniSquareを返す
+const MiniSquareGroup = ({ count }: { count: number }) => {
+  return (
+    <>
+      {Array.from({ length: count }).map((_, i) => (
+        <MiniSquare key={i} />
+      ))}
+    </>
+  )
+}
+
 export function getLearning05(): { name: string; element: React.ReactNode }[] {
   return [
     {
@@ -16,7 +27,7 @@ export function getLearning05(): { name: string; element: React.ReactNode }[] {
       element: (
         <div className='grid grid-cols-2 place-content-center place-items-center justify-center w-40 h-20 bg-pink-100 rounded-sm'>
           <div className='w-16 h-8 m-1 grid grid-cols-1 place-content-center place-items-center bg-amber-200 rounded-sm border-amber-200'>
-            <MiniSquare />
+            <MiniSquareGroup count={4} />
           </div>
           <div className='w-16 h-8 m-1 bg-amber-300 rounded-sm border-amber-300'></div>
           <div className='w-16 h-8 m-1 bg-amber-400 rounded-sm border-amber-400'></div>
