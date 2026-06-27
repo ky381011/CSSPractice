@@ -9,14 +9,14 @@ const MiniSquare = () => {
   )
 }
 
-// 指定した個数のMiniSquareを返す
-const MiniSquareGroup = ({ count }: { count: number }) => {
+// 指定した個数のMiniSquareを横並べで返す
+const MiniSquareGroup = ({ count, className = 'flex flex-row gap-1' }: { count: number; className?: string }) => {
   return (
-    <>
+    <div className={className}>
       {Array.from({ length: count }).map((_, i) => (
         <MiniSquare key={i} />
       ))}
-    </>
+    </div>
   )
 }
 
