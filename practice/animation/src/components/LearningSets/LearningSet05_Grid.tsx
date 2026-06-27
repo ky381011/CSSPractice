@@ -26,10 +26,18 @@ const MiniSquare = () => {
  * デフォルトではフレックスボックスの行方向（横並べ）で、要素間に1単位のギャップを設定。
  * 
  * @param {number} count - 表示するMiniSquareの個数（必須）
- * @param {string} [className='flex flex-row gap-1'] - カスタムCSSクラス
- *   - デフォルト：flex flex-row gap-1 (横並べ)
- *   - 例：'flex flex-col gap-2' (縦並べ、ギャップ拡大)
- *   - 例：'grid grid-cols-2 gap-1' (グリッド配置)
+ * @param {string} [className='flex flex-row gap-1'] - カスタムCSSクラス（Tailwind CSS）
+ *   
+ *   デフォルト値の詳細：
+ *   - `flex` - フレックスボックスを有効化。子要素を柔軟にレイアウト
+ *   - `flex-row` - 行方向（水平・左から右）に配置。フレックスボックスのデフォルト方向
+ *   - `gap-1` - 要素間のギャップを 0.25rem に設定
+ *   
+ *   カスタマイズ例：
+ *   - 縦並べ: `'flex flex-col gap-2'` (gap-2は0.5rem)
+ *   - グリッド2列: `'grid grid-cols-2 gap-1'`
+ *   - グリッド3列: `'grid grid-cols-3 gap-1'`
+ *   - グリッドレスポンシブ: `'grid grid-cols-2 md:grid-cols-4 gap-1'`
  * 
  * @returns {JSX.Element} MiniSquareを配置したコンテナ
  */
