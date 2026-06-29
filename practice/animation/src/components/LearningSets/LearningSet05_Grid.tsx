@@ -61,7 +61,7 @@ export function getLearning05(): { name: string; element: React.ReactNode }[] {
             <MiniSquareGroup count={4} />
           </div>
           <div className='w-16 h-8 m-1 grid grid-cols-1 place-content-center place-items-center bg-amber-200 rounded-sm border-amber-200'>
-            <MiniSquareGroup count={4} className='flex flex-row gap-2'/>
+            <MiniSquareGroup count={4} className='grid grid-cols-2 gap-1'/>
           </div>
           <div className='w-16 h-8 m-1 bg-amber-400 rounded-sm border-amber-400'></div>
           <div className='w-16 h-8 m-1 bg-amber-500 rounded-sm border-amber-500'></div>
