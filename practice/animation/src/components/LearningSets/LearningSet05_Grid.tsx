@@ -7,15 +7,17 @@ export const setName = 'Grid'
  * 
  * グリッドやフレックスボックスのデモ用の小さな装飾要素
  * 幅・高さ：2x2 (w-2 h-2)
- * 背景色：白 (bg-white)
- * 枠線：白 (border-white)
+ * 背景色：引数で指定可能（デフォルト：白 bg-white）
+ * 枠線：引数で指定可能（デフォルト：白 border-white）
  * 丸み：下部に丸み (rounded-b-xs)
  * 
- * @returns {JSX.Element} 小さい白い正方形
+ * @param {string} [bgColor='bg-white'] - 背景色のTailwind CSSクラス
+ * @param {string} [borderColor='border-white'] - 枠線色のTailwind CSSクラス
+ * @returns {JSX.Element} 小さい正方形
  */
-const MiniSquare = () => {
+const MiniSquare = ({ bgColor = 'bg-white', borderColor = 'border-white' }: { bgColor?: string; borderColor?: string }) => {
   return (
-    <div className='w-2 h-2 bg-white border-white rounded-b-xs'></div>
+    <div className={`w-2 h-2 ${bgColor} ${borderColor} rounded-b-xs`}></div>
   )
 }
 
@@ -27,13 +29,15 @@ const MiniSquare = () => {
  * 
  * @param {number} count - 表示するMiniSquareの個数（必須）
  * @param {string} [className='flex flex-row gap-1'] - カスタムCSSクラス（Tailwind CSS）
+ * @param {string} [bgColor='bg-white'] - 背景色のTailwind CSSクラス
+ * @param {string} [borderColor='border-white'] - 枠線色のTailwind CSSクラス
  *   
- *   デフォルト値の詳細：
+ *   classNameのデフォルト値の詳細：
  *   - `flex` - フレックスボックスを有効化。子要素を柔軟にレイアウト
  *   - `flex-row` - 行方向（水平・左から右）に配置。フレックスボックスのデフォルト方向
  *   - `gap-1` - 要素間のギャップを 0.25rem に設定
  *   
- *   カスタマイズ例：
+ *   classNameのカスタマイズ例：
  *   - 縦並べ: `'flex flex-col gap-2'` (gap-2は0.5rem)
  *   - グリッド2列: `'grid grid-cols-2 gap-1'`
  *   - グリッド3列: `'grid grid-cols-3 gap-1'`
@@ -41,11 +45,11 @@ const MiniSquare = () => {
  * 
  * @returns {JSX.Element} MiniSquareを配置したコンテナ
  */
-const MiniSquareGroup = ({ count, className = 'flex flex-row gap-1' }: { count: number; className?: string }) => {
+const MiniSquareGroup = ({ count, className = 'flex flex-row gap-1', bgColor = 'bg-white', borderColor = 'border-white' }: { count: number; className?: string; bgColor?: string; borderColor?: string }) => {
   return (
     <div className={className}>
       {Array.from({ length: count }).map((_, i) => (
-        <MiniSquare key={i} />
+        <MiniSquare key={i} bgColor={bgColor} borderColor={borderColor} />
       ))}
     </div>
   )
